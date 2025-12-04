@@ -1,689 +1,864 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>HeartMinded - Авторский курс Ксении Писаревой</title>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Cormorant:wght@400;600;700&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <div class="first-main">
-            <nav class="navbar navbar-expand-xl navbar-light" id="navbar-id">
-                <div class="container-fluid">
-                    <div class="row w-100 align-items-center gx-0">
-                        <div class="col-auto ms-3">
-                            <a class="navbar-brand" href="#">
-                                <img
-                                    src="assets/Logo.svg"
-                                    alt="HeartMinded"
-                                    height="60"
-                                />
-                            </a>
-                        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Похоронное бюро 'Вечный покой' - мы заботимся о вашем последнем путешествии с уважением и тактом">
+    <title>Похоронное бюро "Вечный покой"</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- SVG спрайты -->
+<!-- ВАЖНО: пути в атрибутах d восстановлены в исходном виде (латиница), чтобы снова работала иконка Telegram и другие символы -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <!-- Иконки интерфейса -->
+    <symbol id="icon-menu" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+    </symbol>
+    <symbol id="icon-arrow-left" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    </symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+    </symbol>
 
-                        <div class="col d-flex justify-content-end">
-                            <div class="d-flex">
-                                <button
-                                    class="navbar-toggler me-2"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#navbarNav"
-                                    aria-controls="navbarNav"
-                                    aria-expanded="false"
-                                    aria-label="Toggle navigation"
-                                >
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                                <div
-                                    class="collapse navbar-collapse"
-                                    id="navbarNav"
-                                >
-                                    <ul class="navbar-nav">
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#for-whom"
-                                                >Для кого этот курс?</a
-                                            >
-                                            <div class="nav-line"></div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#results"
-                                                >Результаты обучения</a
-                                            >
-                                            <div class="nav-line"></div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#prices"
-                                                >Тарифы</a
-                                            >
-                                            <div class="nav-line"></div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#tools"
-                                                >Инструменты</a
-                                            >
-                                            <div class="nav-line"></div>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#contacts"
-                                                >Контакты</a
-                                            >
-                                            <div class="nav-line"></div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+    <!-- Иконки для разделов (Футер) -->
+    <symbol id="icon-info" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+    </symbol>
+    <symbol id="icon-list" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M14 17H4v2h10v-2zm6-8H4v2h16V9zM4 15h16v-2H4v2zM4 5v2h16V5H4z"/>
+    </symbol>
+    <symbol id="icon-share" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+    </symbol>
+    <symbol id="icon-bullet" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+    </symbol>
 
-                        <div class="col-auto me-3 d-flex align-items-center">
-                            <a href="https://instagram.com" class="me-2">
-                                <img src="assets/Inst.svg" alt="inst" />
-                            </a>
+    <!-- Иконки для "Как мы работаем" -->
+    <symbol id="icon-consult" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/>
+    </symbol>
+    <symbol id="icon-docs" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+    </symbol>
+    <symbol id="icon-candle" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 2c-.55 0-1 .45-1 1v3.09c0 1.32-2.6 2.44-2.91 5.14C7.54 15.06 9.51 18.23 12 22c2.49-3.77 4.46-6.94 3.91-10.77-.31-2.7-2.91-3.82-2.91-5.14V3c0-.55-.45-1-1-1z"/>
+    </symbol>
 
-                            <a class="btn btn-call-me"> Перезвоните мне </a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Иконки контактов -->
+    <symbol id="icon-phone" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/>
+    </symbol>
+    <symbol id="icon-email" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+    </symbol>
+    <symbol id="icon-location" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+    </symbol>
+    <symbol id="icon-time" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+    </symbol>
+
+    <!-- Иконки услуг -->
+    <symbol id="icon-coffin" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M19,6H5C3.9,6,3,6.9,3,8v8c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V8C21,6.9,20.1,6,19,6z M19,16H5V8h14V16z"/>
+        <path fill="currentColor" d="M7,10h10v2H7V10z M7,13h10v2H7V13z"/>
+    </symbol>
+    <symbol id="icon-cremation" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M17.66 8L12 2.35 6.34 8C4.78 9.56 4 11.64 4 13.64s.78 4.11 2.34 5.67 3.61 2.35 5.66 2.35 4.1-.79 5.66-2.35S20 15.64 20 13.64 19.22 9.56 17.66 8zM12 20c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+        <circle fill="currentColor" cx="12" cy="16" r="1"/>
+    </symbol>
+    <symbol id="icon-memorial" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+        <path fill="currentColor" d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+    </symbol>
+    <symbol id="icon-eco" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12,20c-4.41,0-8-3.59-8-8s3.59-8,8-8s8,3.59,8,8 S16.41,20,12,20z"/>
+        <path fill="currentColor" d="M12,6c-3.31,0-6,2.69-6,6s2.69,6,6,6s6-2.69,6-6S15.31,6,12,6z M12,16c-2.21,0-4-1.79-4-4s1.79-4,4-4s4,1.79,4,4 S14.21,16,12,16z"/>
+    </symbol>
+    <symbol id="icon-transport" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+    </symbol>
+    <symbol id="icon-care" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 2l-5.5 9h11L12 2zm0 3.8L13.4 9h-2.8L12 5.8zM4 12h16v2H4v-2zm0 4h16v2H4v-2zm0 4h16v2H4v-2z"/>
+    </symbol>
+
+    <!-- Соцсети -->
+    <symbol id="icon-instagram" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
+    </symbol>
+
+    <!-- VK -->
+    <symbol id="icon-vk" viewBox="0 0 48 48">
+        <path d="M25.54 34.5801C14.6 34.5801 8.3601 27.0801 8.1001 14.6001H13.5801C13.7601 23.7601 17.8 27.6401 21 28.4401V14.6001H26.1602V22.5001C29.3202 22.1601 32.6398 18.5601 33.7598 14.6001H38.9199C38.0599 19.4801 34.4599 23.0801 31.8999 24.5601C34.4599 25.7601 38.5601 28.9001 40.1201 34.5801H34.4399C33.2199 30.7801 30.1802 27.8401 26.1602 27.4401V34.5801H25.54Z" fill="currentColor"/>
+    </symbol>
+
+    <symbol id="icon-telegram" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M18.38 3.09L2.43 9.24c-1.13.45-1.11 1.1 0 1.43l4.09 1.28 1.54 4.86c.18.53.08.74.64.74.41 0 .59-.19.82-.41l1.96-1.9 4.12 3.05c.76.42 1.3.2 1.5-.71l2.73-12.87c.27-1.11-.42-1.61-1.45-1.62zM8.76 14.12l-.36-2.61 8.42-5.2c.4-.25.77-.11.47.15L8.76 14.12z"/>
+    </symbol>
+
+    <!-- Сложный логотип -->
+    <symbol id="logo-icon" viewBox="0 0 4000 4000">
+        <!-- Содержимое логотипа оставлено как в исходнике -->
+        <g>
+            <path fill="#2E8B57" d="M1999.999,2012.026c0,0-72.019,93.77-110.164,162.113c-38.141,68.338-127.148,205.02-81.057,311.508
+            c46.096,106.483,124.766,49.267,147.807,31.787c9.723-7.375,24.53-16.02,43.414-22.002c18.882,5.982,33.689,14.627,43.41,22.002
+            c23.043,17.48,101.713,74.697,147.809-31.787c46.092-106.489-42.916-243.17-81.057-311.508
+            C2072.016,2105.796,1999.999,2012.026,1999.999,2012.026 M2460.617,1292.644c-184.336,76.65-343.614,101.878-460.618,245.835
+            c-117.006-143.957-276.284-169.185-460.62-245.835c83.299,71.902,335.337,138.095,460.62,399.553
+            C2125.28,1430.74,2377.318,1364.546,2460.617,1292.644z M1009.36,1381.79l78.479-95.295
+            c13.326-399.677,299.945-517.828,300.777-518.188c-21.519,25.72-233.309,150.823-219.204,507.656l566.567,260.485l-596.574-185.045
+            l-208.594,253.285c36.487,81.983,138.029,352.346-20.028,524.688c127.177,201.577,190.456,200.15,316.38,197.235
+            c45.555-1.05,98.297-2.273,163.674,3.533c50.663,4.493,103.63,17.565,157.932,47.863c101.707,56.753,102.411,167.122,96.816,195.77
+            c-46.564-61.12-92.159-100.295-136.232-124.885c-19.124-10.677-38.051-18.652-56.708-24.543
+            c41.831,44.632,56.643,92.645,71.198,139.857c89.508,290.315,862.799,290.315,952.307,0c14.557-47.212,29.37-95.225,71.199-139.857
+            c-18.656,5.892-37.583,13.867-56.708,24.543c-44.073,24.59-89.669,63.765-136.232,124.885
+            c-5.595-28.648-4.891-139.017,96.816-195.77c54.303-30.298,107.269-43.37,157.933-47.863c65.377-5.807,118.119-4.583,163.674-3.533
+            c125.922,2.915,189.203,4.342,316.378-197.235c-158.054-172.342-56.514-442.705-20.028-524.688l-208.592-253.285l-596.573,185.045
+            l566.565-260.485c14.107-356.833-197.683-481.936-219.202-507.656c0.83,0.36,287.451,118.512,300.777,518.188l78.479,95.295
+            C2978.648,155.513,1021.347,155.513,1009.36,1381.79z M1999.999,3554.417c-95.53,70.56-179.165,80.278-259.281,48.94
+            c-81.331-31.813-154.106-106.775-231.213-202.322c-141.614-175.475-423.85-342.968-424.666-343.45l-26.821-16.002l8.706-30.09
+            c96.8-334.65-75.201-633.538-106.313-683.703c-40.275-39.43-83.673-97.705-135.703-183.605l-17.545-28.97l25.336-22.365
+            c179.636-158.583,15.1-474.77,14.636-475.681l-12.124-23.668l95.398-115.838c-81.61-1463.981,2220.792-1463.981,2139.182,0
+            l95.396,115.838l-12.122,23.668c-0.464,0.911-165,317.098,14.634,475.681l25.338,22.365l-17.546,28.97
+            c-52.03,85.9-95.428,144.175-135.705,183.605c-31.11,50.165-203.111,349.053-106.313,683.703l8.708,30.09l-26.821,16.002
+            c-0.816,0.482-283.052,167.975-424.666,343.45c-77.108,95.546-149.882,170.508-231.213,202.322
+            C2179.162,3634.695,2095.525,3624.977,1999.999,3554.417z M1290.429,2723.644c-4.134-13.52-8.205-26.848-14.447-45.883
+            c-41.221-125.72-116.323-187.115-163.643-218.372c50.077,135.275,92.977,332.06,40.261,544.64
+            c75.435,47.315,296.277,192.646,420.16,346.148c69.106,85.63,132.572,152.13,197.514,177.528
+            c53.674,20.995,147.137-2.583,229.726-79.535c82.587,76.951,176.05,100.53,229.724,79.535
+            c64.941-25.398,128.408-91.898,197.514-177.528c123.883-153.502,344.724-298.833,420.16-346.148
+            c-52.716-212.58-9.816-409.365,40.261-544.64c-47.321,31.257-122.422,92.652-163.645,218.372
+            c-6.24,19.035-10.313,32.363-14.445,45.883C2524.181,3330.23,1475.815,3330.23,1290.429,2723.644z M1181.351,2408.466
+            c55.316,40.857,128.884,113.073,171.871,244.185c3.756,11.467,9.226,29.364,14.762,47.472
+            c161.766,529.261,1102.262,529.261,1264.025,0c5.538-18.108,11.009-36.005,14.764-47.472
+            c42.987-131.112,116.555-203.328,171.869-244.185c-137.276-0.525-216.481,22.45-264.929,179.578
+            c-114.298,370.678-993.133,370.678-1107.429,0C1397.834,2430.916,1318.629,2407.941,1181.351,2408.466z M1823.101,1559.064
+            c0,0,106.484,114.435,90.592,176.418c-15.898,61.98-92.183,155.755-197.08,95.358c-104.895-60.397-344.881-209.793-344.881-209.793
+            s-85.823-68.338-201.845-44.499c-116.022,23.838-166.88,197.073-128.735,308.328c0,0-3.18-171.647,163.7-217.738
+            c0,0-177.321,135.893-36.556,397.333c0,0-50.859-114.43,20.662-249.525c0,0-41.319,193.898,136.682,300.381
+            c178.001,106.485,403.69-66.75,429.118-184.36c0,0-11.125,130.323-109.664,257.471c0,0,136.684-71.518,171.649-233.631
+            c0,0,10.842,152.702-112.844,298.79c0,0,135.095-93.77,178.007-268.597c25.024-101.948,78.147-149.296,118.093-171.066
+            c39.943,21.77,93.066,69.118,118.091,171.066c42.912,174.827,178.005,268.597,178.005,268.597
+            c-123.686-146.088-112.842-298.79-112.842-298.79c34.965,162.113,171.647,233.631,171.647,233.631
+            c-98.537-127.148-109.662-257.471-109.662-257.471c25.427,117.61,251.115,290.845,429.116,184.36
+            c178.003-106.483,136.684-300.381,136.684-300.381c71.521,135.095,20.662,249.525,20.662,249.525
+            c140.765-261.44-36.556-397.333-36.556-397.333c166.88,46.091,163.7,217.738,163.7,217.738
+            c38.145-111.255-12.713-284.49-128.735-308.328c-116.022-23.84-201.845,44.499-201.845,44.499s-239.986,149.396-344.883,209.793
+            c104.895,60.397-181.181-33.378-197.078-95.358c-15.894-61.984,90.592-176.418,90.592-176.418
+            c-119.199,95.362-176.896,178.007-176.896,178.007S1942.298,1654.426,1823.101,1559.064z"/>
+            <polygon fill="#2E8B57" points="1665.209,2750.002 1549.185,2999.527 1475.439,2965.515 1591.46,2715.996"/>
+            <rect fill="#2E8B57" x="1592.462" y="2895.825" transform="matrix(0.2702 -0.9628 0.9628 0.2702 -1564.5924 3808.8127)" width="275.178" height="81.216"/>
+            <polygon fill="#2E8B57" points="1948.516,2827.562 1919.866,3101.247 1839.131,3092.98 1867.776,2819.301"/>
+            <polygon fill="#2E8B57" points="2334.787,2750.002 2450.809,2999.527 2524.553,2965.515 2408.531,2715.996"/>
+            <rect fill="#2E8B57" x="2229.337" y="2798.845" transform="matrix(0.9628 -0.2702 0.2702 0.9628 -708.9235 722.4691)" width="81.212" height="275.178"/>
+            <polygon fill="#2E8B57" points="2051.48,2827.562 2080.124,3101.247 2160.865,3092.98 2132.215,2819.301"/>
+        </g>
+    </symbol>
+
+    <!-- 5 звезд -->
+    <symbol id="icon-5-stars" viewBox="0 0 120 24">
+        <path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        <path fill="currentColor" d="M36 17.27L42.18 21l-1.64-7.03L46 9.24l-7.19-.61L36 2 33.19 8.63 26 9.24l5.46 4.73L29.82 21z"/>
+        <path fill="currentColor" d="M60 17.27L66.18 21l-1.64-7.03L70 9.24l-7.19-.61L60 2 57.19 8.63 50 9.24l5.46 4.73L53.82 21z"/>
+        <path fill="currentColor" d="M84 17.27L90.18 21l-1.64-7.03L94 9.24l-7.19-.61L84 2 81.19 8.63 74 9.24l5.46 4.73L77.82 21z"/>
+        <path fill="currentColor" d="M108 17.27L114.18 21l-1.64-7.03L118 9.24l-7.19-.61L108 2 105.19 8.63 98 9.24l5.46 4.73L101.82 21z"/>
+    </symbol>
+    <symbol id="decor-leaf" viewBox="0 0 100 100">
+        <path fill="currentColor" d="M50,10 C30,10 10,30 10,50 C10,70 30,90 50,90 C70,90 90,70 90,50 C90,30 70,10 50,10 Z M50,80 C35,80 20,65 20,50 C20,35 35,20 50,20 C65,20 80,35 80,50 C80,65 65,80 50,80 Z"/>
+    </symbol>
+</svg>
+
+<header>
+    <div class="container">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <svg class="logo-icon"><use href="#logo-icon"></use></svg>
+                Вечный <span>Покой</span>
+            </a>
+
+            <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+                <span class="visually-hidden">Меню</span>
+                <svg class="icon"><use href="#icon-menu"></use></svg>
+            </button>
+
+            <nav id="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#services" class="nav-link">Услуги</a></li>
+                    <li><a href="#process" class="nav-link">Как мы работаем</a></li>
+                    <li><a href="#gallery" class="nav-link">Галерея</a></li>
+                    <li><a href="#pricing" class="nav-link">Цены</a></li>
+                    <li><a href="#testimonials" class="nav-link">Отзывы</a></li>
+                    <li><a href="#contact" class="nav-link">Контакты</a></li>
+                </ul>
             </nav>
 
-            <section class="hero-section">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-12 text-center mb-4">
-                            <h6 class="author-name">
-                                Авторский курс Ксении Писаревой
-                            </h6>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-12 text-center mb-4">
-                            <h1 class="course-title">
-                                Heart<span class="minded">Minded</span>
-                            </h1>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-12 text-center mb-4">
-                            <h2 class="course-subtitle">
-                                Обретите стройное, гибкое тело<br />
-                                без напряжений и зажимов и восстановите<br />
-                                внутреннее равновесие
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-12">
-                            <div class="features-container mb-5">
-                                <div class="row justify-content-center">
-                                    <div
-                                        class="col-md-4 feature-item text-center"
-                                    >
-                                        <div class="feature-icon mb-3">
-                                            <img
-                                                src="assets/free-icon-yoga-position-1599530 1.svg"
-                                                alt="Преподаватель"
-                                                class="feature-svg"
-                                            />
-                                        </div>
-                                        <div class="feature-text">
-                                            <div class="feature-title">
-                                                Преподаватель
-                                            </div>
-                                            <div class="feature-subtitle">
-                                                мирового класса
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="col-md-4 feature-item text-center"
-                                    >
-                                        <div class="feature-icon mb-3">
-                                            <img
-                                                src="assets/free-icon-helping-hand-3208247 1.svg"
-                                                alt="Поддержка"
-                                                class="feature-svg"
-                                            />
-                                        </div>
-                                        <div class="feature-text">
-                                            <div class="feature-title">
-                                                Персональная поддержка
-                                            </div>
-                                            <div class="feature-subtitle">
-                                                на всех
-                                            </div>
-                                            <div class="feature-subtitle">
-                                                тарифах
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="col-md-4 feature-item text-center"
-                                    >
-                                        <div class="feature-icon mb-3">
-                                            <img
-                                                src="assets/free-icon-time-1792839 1.svg"
-                                                alt="Длительность"
-                                                class="feature-svg"
-                                            />
-                                        </div>
-                                        <div class="feature-text">
-                                            <div class="feature-title">
-                                                Длительность курса
-                                            </div>
-                                            <div class="feature-subtitle">
-                                                3 недели
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="register-button-container">
-                                <a href="#register">
-                                    <img
-                                        src="assets/btn.svg"
-                                        alt="Зарегистрироваться на бесплатный вебинар"
-                                        class="register-button-img"
-                                    />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <div class="header-social">
+                <a href="#" aria-label="Наш Instagram" class="social-link">
+                    <svg class="icon"><use href="#icon-instagram"></use></svg>
+                </a>
+                <a href="#" aria-label="Наш ВКонтакте" class="social-link">
+                    <svg class="icon"><use href="#icon-vk"></use></svg>
+                </a>
+                <a href="#" aria-label="Наш Telegram" class="social-link">
+                    <svg class="icon"><use href="#icon-telegram"></use></svg>
+                </a>
+            </div>
         </div>
-        <div class="second-main">
-            <section class="uniqueness-section">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10">
-                            <div class="section-header text-center mb-5">
-                                <h2 class="section-title">
-                                    В чем "уникальность" курса?
-                                </h2>
-                                <h3 class="section-subtitle">
-                                    Курс HeartMinded для КАЖДОГО "ТЕЛА" и "ДУШИ"
-                                </h3>
-                            </div>
-                            <div class="central-image-container">
-                                <div class="hint-blocks">
-                                    <div class="hint-block action-hint">
-                                        <div class="hint-trigger">
-                                            <span class="hint-title"
-                                                >Действие</span
-                                            >
-                                            <img
-                                                class="question-icon"
-                                                src="assets/quest.svg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="hint-content">
-                                            Наше физическое состояние
-                                            определяется действиями. Действия
-                                            же, в свою очередь, мотивацией.
-                                        </div>
-                                        <div class="hint-arrow"></div>
-                                    </div>
+    </div>
+</header>
 
-                                    <div class="hint-block psyche-hint">
-                                        <div class="hint-trigger">
-                                            <span class="hint-title"
-                                                >Психика</span
-                                            >
-                                            <img
-                                                class="question-icon"
-                                                src="assets/quest.svg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="hint-content">
-                                            Поэтому, чтобы добиться долгосрочных
-                                            результатов, необходимо работать и с
-                                            физикой, и с психикой, и с химией
-                                            нашего организма.
-                                        </div>
-                                        <div class="hint-arrow"></div>
-                                    </div>
+<main id="main-content">
+    <!-- Герой -->
+    <section class="hero">
+        <!-- Левая картинка -->
+        <div class="hero-side-image hero-side-left">
+            <picture>
+                <source
+                        type="image/avif"
+                        srcset="assets/left-1x.avif 1x, assets/left-2x.avif 2x"
+                        sizes="(max-width: 768px) 40vw, (max-width: 1200px) 30vw, 25vw"
+                >
+                <source
+                        type="image/webp"
+                        srcset="assets/left-1x.webp 1x, assets/left-2x.webp 2x"
+                        sizes="(max-width: 768px) 40vw, (max-width: 1200px) 30vw, 25vw"
+                >
+                <img
+                        src="assets/left-1x.png"
+                        srcset="assets/left-1x.png 1x, assets/left-2x.png 2x"
+                        sizes="(max-width: 768px) 40vw, (max-width: 1200px) 30vw, 25vw"
+                        alt="Оформление слева"
+                        loading="lazy"
+                >
+            </picture>
+        </div>
 
-                                    <div class="hint-block motivation-hint">
-                                        <div class="hint-trigger">
-                                            <span class="hint-title"
-                                                >Мотивация</span
-                                            >
-                                            <img
-                                                class="question-icon"
-                                                src="assets/quest.svg"
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div class="hint-content">
-                                            На мотивацию влияют глубинные
-                                            процессы психики, часть которых мы
-                                            даже не осознаем.
-                                        </div>
-                                        <div class="hint-arrow"></div>
-                                    </div>
-                                </div>
-                            </div>
+        <!-- Правая картинка -->
+        <div class="hero-side-image hero-side-right">
+            <picture>
+                <source
+                        type="image/avif"
+                        srcset="assets/right-1x.avif 1x, assets/right-2x.avif 2x"
+                        sizes="(max-width: 768px) 40vw, (max-width: 1200px) 30vw, 25vw"
+                >
+                <source
+                        type="image/webp"
+                        srcset="assets/right-1x.webp 1x, assets/right-2x.webp 2x"
+                        sizes="(max-width: 768px) 40vw, (max-width: 1200px) 30vw, 25vw"
+                >
+                <img
+                        src="assets/right-1x.png"
+                        srcset="assets/right-1x.png 1x, assets/right-2x.png 2x"
+                        sizes="(max-width: 768px) 40vw, (max-width: 1200px) 30vw, 25vw"
+                        alt="Оформление справа"
+                        loading="lazy"
+                >
+            </picture>
+        </div>
 
-                            <div class="additional-text">
-                                <p>
-                                    В рамках одного курса вы ощутите силу
-                                    пилатеса, когнитивной психологии,
-                                    минералогии и китайской традиционной
-                                    медицины.
-                                </p>
-                                <p>
-                                    Вы научитесь "читать" собственное тело и
-                                    отвечать ему корректно на запросы, исправляя
-                                    первопричину, а не просто снижать
-                                    симптоматику. После окончания курса вы
-                                    сможете пользоваться инструментами
-                                    самостоятельно.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Вечный покой с <span>заботой</span></h1>
+                <p class="hero-subtitle">Мы превращаем ваше последнее путешествие в достойное и спокойное прощание</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary btn-with-icon">
+                        <svg class="icon"><use href="#icon-phone"></use></svg>
+                        Запланировать заранее
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        Наши услуги
+                    </a>
                 </div>
-            </section>
-        <div class="elements-section">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="section-header text-center mb-5">
-                            <h2 class="elements-title">
-                                Элементы вашего эффективного обучения
-                            </h2>
-                        </div>
-
-                        <div class="elements-grid">
-                            <div class="element-item">
-                                <div class="element-icon">
-                                    <img
-                                        src="assets/1.svg"
-                                        alt="Преподаватель"
-                                        class="element-svg"
-                                    />
-                                </div>
-                                <div class="element-content">
-                                    <h4 class="element-title">
-                                        Преподаватель<br>мирового класса
-                                    </h4>
-                                    <div class="element-description">
-                                        Вы будите заниматься по авторской
-                                        методике, подкрепленной 15-ти летним
-                                        опытом работы в фитнес-индустрии и
-                                        глубокими знаниями смежных областей
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="element-item">
-                                <div class="element-icon">
-                                    <img
-                                        src="assets/2.svg"
-                                        alt="Поддержка"
-                                        class="element-svg"
-                                    />
-                                </div>
-                                <div class="element-content">
-                                    <h4 class="element-title">
-                                        Персональная<br>поддержка
-                                    </h4>
-                                    <div class="element-description">
-                                        На всех тарифах предусмотрена обратная
-                                        связь - в чате поддержки вы всегда
-                                        сможете проконсультироваться по любым
-                                        вопросам
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="element-item">
-                                <div class="element-icon">
-                                    <img
-                                        src="assets/3.svg"
-                                        alt="Индивидуальный подход"
-                                        class="element-svg"
-                                    />
-                                </div>
-                                <div class="element-content">
-                                    <h4 class="element-title">
-                                        Индивидуальный<br>подход
-                                    </h4>
-                                    <div class="element-description">
-                                        В курсе представлены опции даже для
-                                        людей с физиологическими
-                                        особенностями/травмами/
-                                        послеоперационным периодом
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="element-item">
-                                <div class="element-icon">
-                                    <img
-                                        src="assets/4.svg"
-                                        alt="Доступная методика"
-                                        class="element-svg"
-                                    />
-                                </div>
-                                <div class="element-content">
-                                    <h4 class="element-title">
-                                        Доступная<br>методика
-                                    </h4>
-                                    <div class="element-description">
-                                        Легкая в усвоении информация — результат
-                                        вы увидите и почувствуетеже после 1-го
-                                        урока
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="element-item">
-                                <div class="element-icon">
-                                    <img
-                                        src="assets/5.svg"
-                                        alt="Экономия ресурсов"
-                                        class="element-svg"
-                                    />
-                                </div>
-                                <div class="element-content">
-                                    <h4 class="element-title">
-                                        Экономия<br>ресурсов
-                                    </h4>
-                                    <div class="element-description">
-                                        Онлайн-курс полностью адаптирован для
-                                        занятий дома в удобное для вас время
-                                        суток - вам не придется тратить деньги и
-                                        время на дорогу
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="hero-features">
+                    <div class="feature">
+                        <svg class="icon"><use href="#icon-time"></use></svg>
+                        <span>Круглосуточно</span>
+                    </div>
+                    <div class="feature">
+                        <svg class="icon"><use href="#decor-leaf"></use></svg>
+                        <span>15 лет опыта</span>
+                    </div>
+                    <div class="feature">
+                        <svg class="icon"><use href="#icon-eco"></use></svg>
+                        <span>Эко-подход</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="third-main" id="for-whom">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <h2 class="third-main-title">Этот курс будет полезен для:</h2>
-                        
-                        <div class="third-main-content">
-    
-                            <div class="sec1">
-                                <div class="sec-image">
-                                    <img src="assets/sec1.svg" alt="Восстановления после родов">
-                                </div>
-                                <div class="sec-content">
-                                    <h3 class="sec-title">Восстановления после родов</h3>
-                                    <ul class="sec-list">
-                                        <li>Вы хотите вернуть форму после беременности и любовь к своему телу</li>
-                                        <li>У вас диастаз/грыжи/протрузии, и вы не знаете, как правильно тренироваться</li>
-                                        <li>Хотите восстановить энергию и быть в ресурсном состоянии</li>
-                                    </ul>
-                                </div>
-                            </div>
-    
-                            <div class="sec2">
-                                <div class="sec-image">
-                                    <img src="assets/sec2.svg" alt="Людей с сидячей работой">
-                                </div>
-                                <div class="sec-content">
-                                    <h3 class="sec-title">Людей с сидячей работой</h3>
-                                    <ul class="sec-list">
-                                        <li>Вы хотите избавиться от сутулости/болей в спине/пояснице</li>
-                                        <li>У вас проблемы с дыханием, пищеварением, выделительной системой, вы тяжело засыпаете или просыпаетесь уставшим</li>
-                                        <li>Вы чувствуете "выгорание", ощущаете себя одиноким, покинутым, не можете найти внутреннюю опору</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sec3">
-                                <div class="sec-image">
-                                    <img src="assets/sec3.svg" alt="Восстановления после травм/операций">
-                                </div>
-                                <div class="sec-content">
-                                    <h3 class="sec-title">Восстановления после травм/операций</h3>
-                                    <ul class="sec-list">
-                                        <li>Вы хотите восстановить потерянный тонус и гибкость мышц, ускорить выздоровление</li>
-                                        <li>Вам необходимо укрепить и улучшить все двигательные функции тела</li>
-                                        <li>Вы стремитесь поддерживать тело в форме, несмотря на ограничения</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+    </section>
+
+    <!-- Услуги -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Наши услуги</h2>
+            <p class="section-subtitle">Комплексный подход к организации похорон</p>
+
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="service-icon"><svg><use href="#icon-coffin"></use></svg></div>
+                    <div class="service-content">
+                        <h3 class="service-title">Традиционные похороны</h3>
+                        <p class="service-description">Классический подход с соблюдением всех ритуалов и традиций.</p>
+                        <p class="service-price">от 50 000 руб.</p>
+                        <button class="btn-service">Подробнее</button>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon"><svg><use href="#icon-cremation"></use></svg></div>
+                    <div class="service-content">
+                        <h3 class="service-title">Кремация</h3>
+                        <p class="service-description">Современный и экологичный способ прощания.</p>
+                        <p class="service-price">от 30 000 руб.</p>
+                        <button class="btn-service">Подробнее</button>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon"><svg><use href="#icon-memorial"></use></svg></div>
+                    <div class="service-content">
+                        <h3 class="service-title">Организация поминок</h3>
+                        <p class="service-description">Поможем организовать траурный обед в любом формате.</p>
+                        <p class="service-price">от 15 000 руб.</p>
+                        <button class="btn-service">Подробнее</button>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon"><svg><use href="#icon-eco"></use></svg></div>
+                    <div class="service-content">
+                        <h3 class="service-title">Экологичные похороны</h3>
+                        <p class="service-description">Биоразлагаемые материалы и природные захоронения.</p>
+                        <p class="service-price">от 40 000 руб.</p>
+                        <button class="btn-service">Подробнее</button>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon"><svg><use href="#icon-transport"></use></svg></div>
+                    <div class="service-content">
+                        <h3 class="service-title">Транспортные услуги</h3>
+                        <p class="service-description">Катафалки премиум класса и автобусы для гостей.</p>
+                        <p class="service-price">от 5 000 руб.</p>
+                        <button class="btn-service">Подробнее</button>
+                    </div>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-icon"><svg><use href="#icon-care"></use></svg></div>
+                    <div class="service-content">
+                        <h3 class="service-title">Уход за захоронением</h3>
+                        <p class="service-description">Регулярная уборка, возложение цветов и фотоотчеты.</p>
+                        <p class="service-price">от 3 000 руб.</p>
+                        <button class="btn-service">Подробнее</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Процесс работы -->
+    <section id="process" class="process">
+        <div class="container">
+            <h2 class="section-title">Как мы работаем</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <svg class="step-icon"><use href="#icon-consult"></use></svg>
+                    <div class="step-header">
+                        <div class="step-number">01</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Консультация</h3>
+                        <p>Бесплатная консультация по телефону или в нашем офисе.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <svg class="step-icon"><use href="#icon-docs"></use></svg>
+                    <div class="step-header">
+                        <div class="step-number">02</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Организация</h3>
+                        <p>Берём на себя все вопросы: документы, транспорт, оформление.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <svg class="step-icon"><use href="#icon-candle"></use></svg>
+                    <div class="step-header">
+                        <div class="step-number">03</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Церемония</h3>
+                        <p>Обеспечиваем достойное проведение церемонии.</p>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="registration-section" id="prices">
-            <div class="registration-container">
-                <div class="registration-box">
-                    <div class="registration-inner-box">
-                        <div class="registration-content">
-                            <h2 class="registration-title">Не уверены, что вам нужен курс?</h2>
-                            <p class="registration-subtitle">Начните с бесплатного живого вебинара с автором курса</p>
-                            
-                            <form class="registration-form">
-                                <input type="text" class="registration-input" placeholder="Введите Имя" required>
-                                <input type="email" class="registration-input" placeholder="Введите e-mail" required>
-                                
-                                <div class="registration-checkbox">
-                                    <input type="checkbox" id="privacy-reg" checked>
-                                    <label for="privacy-reg">Я согласен на обработку персональных данных и с условиями политики конфиденциальности</label>
+    <!-- Галерея -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Наша работа</h2>
+            <div class="gallery-grid">
+                <!-- Фото 1 -->
+                <figure class="gallery-item">
+                    <picture>
+                        <source
+                                type="image/avif"
+                                srcset="assets/g1_1x.avif 1x, assets/g1_2x.avif 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        >
+                        <source
+                                type="image/webp"
+                                srcset="assets/g1_1x.webp 1x, assets/g1_2x.webp 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        >
+                        <img
+                                src="assets/g1_1x.jpg"
+                                srcset="assets/g1_1x.jpg 1x, assets/g1_2x.jpg 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                alt="Элегантный зал"
+                                class="gallery-image"
+                                loading="lazy"
+                        >
+                    </picture>
+                    <figcaption class="gallery-caption">Селфи на пати</figcaption>
+                </figure>
+
+                <!-- Фото 2 -->
+                <figure class="gallery-item">
+                    <picture>
+                        <source
+                                type="image/avif"
+                                srcset="assets/g2_1x.avif 1x, assets/g2_2x.avif 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        >
+                        <source
+                                type="image/webp"
+                                srcset="assets/g2_1x.webp 1x, assets/g2_2x.webp 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        >
+                        <img
+                                src="assets/g2_1x.jpg"
+                                srcset="assets/g2_1x.jpg 1x, assets/g2_2x.jpg 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                alt="Катафалк премиум"
+                                class="gallery-image"
+                                loading="lazy"
+                        >
+                    </picture>
+                    <figcaption class="gallery-caption">Одни плюсы</figcaption>
+                </figure>
+
+                <!-- Фото 3 -->
+                <figure class="gallery-item">
+                    <picture>
+                        <source
+                                type="image/avif"
+                                srcset="assets/g3_1x.avif 1x, assets/g3_2x.avif 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        >
+                        <source
+                                type="image/webp"
+                                srcset="assets/g3_1x.webp 1x, assets/g3_2x.webp 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        >
+                        <img
+                                src="assets/g3_1x.jpg"
+                                srcset="assets/g3_1x.jpg 1x, assets/g3_2x.jpg 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                alt="Цветочные композиции"
+                                class="gallery-image"
+                                loading="lazy"
+                        >
+                    </picture>
+                    <figcaption class="gallery-caption">Мрачно</figcaption>
+                </figure>
+
+                <!-- Фото 4 -->
+                <figure class="gallery-item">
+                    <picture>
+                        <source
+                                type="image/avif"
+                                srcset="assets/g4_1x.avif 1x, assets/g4_2x.avif 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        >
+                        <source
+                                type="image/webp"
+                                srcset="assets/g4_1x.webp 1x, assets/g4_2x.webp 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        >
+                        <img
+                                src="assets/g4_1x.jpg"
+                                srcset="assets/g4_1x.jpg 1x, assets/g4_2x.jpg 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                alt="Оркестр"
+                                class="gallery-image"
+                                loading="lazy"
+                        >
+                    </picture>
+                    <figcaption class="gallery-caption">Press F</figcaption>
+                </figure>
+
+                <!-- Фото 5 -->
+                <figure class="gallery-item">
+                    <picture>
+                        <source
+                                type="image/avif"
+                                srcset="assets/g5_1x.avif 1x, assets/g5_2x.avif 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        >
+                        <source
+                                type="image/webp"
+                                srcset="assets/g5_1x.webp 1x, assets/g5_2x.webp 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        >
+                        <img
+                                src="assets/g5_1x.jpg"
+                                srcset="assets/g5_1x.jpg 1x, assets/g5_2x.jpg 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                alt="Территория"
+                                class="gallery-image"
+                                loading="lazy"
+                        >
+                    </picture>
+                    <figcaption class="gallery-caption">Хз кто</figcaption>
+                </figure>
+
+                <!-- Фото 6 -->
+                <figure class="gallery-item">
+                    <picture>
+                        <source
+                                type="image/avif"
+                                srcset="assets/g6_1x.avif 1x, assets/g6_2x.avif 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        >
+                        <source
+                                type="image/webp"
+                                srcset="assets/g6_1x.webp 1x, assets/g6_2x.webp 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        >
+                        <img
+                                src="assets/g6_1x.jpg"
+                                srcset="assets/g6_1x.jpg 1x, assets/g6_2x.jpg 2x"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                alt="Памятники"
+                                class="gallery-image"
+                                loading="lazy"
+                        >
+                    </picture>
+                    <figcaption class="gallery-caption">ИИ монстр</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- Цены -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Наши цены</h2>
+            <div class="table-container">
+                <table class="pricing-table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Услуга</th>
+                        <th scope="col">Базовый</th>
+                        <th scope="col">Стандарт</th>
+                        <th scope="col">Премиум</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">
+                            <div class="th-content">
+                                <svg class="table-icon"><use href="#icon-coffin"></use></svg>
+                                Традиционные похороны
+                            </div>
+                        </th>
+                        <td data-label="Базовый">50 000 руб.</td>
+                        <td data-label="Стандарт">75 000 руб.</td>
+                        <td data-label="Премиум">120 000 руб.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <div class="th-content">
+                                <svg class="table-icon"><use href="#icon-cremation"></use></svg>
+                                Кремация
+                            </div>
+                        </th>
+                        <td data-label="Базовый">30 000 руб.</td>
+                        <td data-label="Стандарт">45 000 руб.</td>
+                        <td data-label="Премиум">70 000 руб.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <div class="th-content">
+                                <svg class="table-icon"><use href="#icon-memorial"></use></svg>
+                                Организация поминок
+                            </div>
+                        </th>
+                        <td data-label="Базовый">15 000 руб.</td>
+                        <td data-label="Стандарт">25 000 руб.</td>
+                        <td data-label="Премиум">40 000 руб.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <div class="th-content">
+                                <svg class="table-icon"><use href="#icon-transport"></use></svg>
+                                Транспортные услуги
+                            </div>
+                        </th>
+                        <td data-label="Базовый">5 000 руб.</td>
+                        <td data-label="Стандарт">10 000 руб.</td>
+                        <td data-label="Премиум">15 000 руб.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <div class="th-content">
+                                <svg class="table-icon"><use href="#icon-eco"></use></svg>
+                                Экологичные похороны
+                            </div>
+                        </th>
+                        <td data-label="Базовый">40 000 руб.</td>
+                        <td data-label="Стандарт">60 000 руб.</td>
+                        <td data-label="Премиум">90 000 руб.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <div class="th-content">
+                                <svg class="table-icon"><use href="#icon-care"></use></svg>
+                                Уход за захоронением
+                            </div>
+                        </th>
+                        <td data-label="Базовый">3 000 руб.</td>
+                        <td data-label="Стандарт">5 000 руб.</td>
+                        <td data-label="Премиум">10 000 руб.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Отзывы клиентов</h2>
+
+            <div class="carousel-container">
+                <button class="carousel-btn prev-btn" aria-label="Предыдущий отзыв">
+                    <svg class="icon"><use href="#icon-arrow-left"></use></svg>
+                </button>
+
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="carousel-slide current-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-icon" style="width: 120px; height: 24px;">
+                                    <svg class="icon" style="width: 100%; height: 100%;"><use href="#icon-5-stars"></use></svg>
                                 </div>
-                            </form>
-                            
-                            <div class="registration-button-container">
-                                <img src="assets/reg_bnt.svg" alt="Зарегистрироваться на бесплатный вебинар" class="registration-button-img">
+                                <div class="testimonial-content"><p>"Огромная благодарность за чуткость и профессионализм. В трудный момент вы взяли на себя все заботы."</p></div>
+                                <div class="testimonial-author"><strong>Мария Иванова</strong><span>г. Москва</span></div>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-icon" style="width: 120px; height: 24px;">
+                                    <svg class="icon" style="width: 100%; height: 100%;"><use href="#icon-5-stars"></use></svg>
+                                </div>
+                                <div class="testimonial-content"><p>"Всё было организовано именно так, как хотел бы покойный. Спасибо за тактичность."</p></div>
+                                <div class="testimonial-author"><strong>Сергей Петров</strong><span>г. Москва</span></div>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-icon" style="width: 120px; height: 24px;">
+                                    <svg class="icon" style="width: 100%; height: 100%;"><use href="#icon-5-stars"></use></svg>
+                                </div>
+                                <div class="testimonial-content"><p>"Выбрали экологичные похороны. Современный подход и бережное отношение к природе."</p></div>
+                                <div class="testimonial-author"><strong>Анна Смирнова</strong><span>г. Москва</span></div>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-icon" style="width: 120px; height: 24px;">
+                                    <svg class="icon" style="width: 100%; height: 100%;"><use href="#icon-5-stars"></use></svg>
+                                </div>
+                                <div class="testimonial-content"><p>"Спасибо за помощь с документами. В таком состоянии сами бы не справились."</p></div>
+                                <div class="testimonial-author"><strong>Дмитрий Козлов</strong><span>г. Москва</span></div>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-icon" style="width: 120px; height: 24px;">
+                                    <svg class="icon" style="width: 100%; height: 100%;"><use href="#icon-5-stars"></use></svg>
+                                </div>
+                                <div class="testimonial-content"><p>"Церемония прощания прошла очень достойно. Отдельное спасибо водителю катафалка."</p></div>
+                                <div class="testimonial-author"><strong>Елена Морозова</strong><span>г. Москва</span></div>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-icon" style="width: 120px; height: 24px;">
+                                    <svg class="icon" style="width: 100%; height: 100%;"><use href="#icon-5-stars"></use></svg>
+                                </div>
+                                <div class="testimonial-content"><p>"Заказывали уход за могилой. Всегда чистые фотоотчеты, цветы свежие. Рекомендую."</p></div>
+                                <div class="testimonial-author"><strong>Олег Павлов</strong><span>г. Москва</span></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <button class="carousel-btn next-btn" aria-label="Следующий отзыв">
+                    <svg class="icon"><use href="#icon-arrow-right"></use></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Свяжитесь с нами</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Наши контакты</h3>
+                    <div class="contact-wrapper">
+                        <div class="contact-item">
+                            <svg class="contact-icon"><use href="#icon-location"></use></svg>
+                            <div>
+                                <strong>Адрес:</strong>
+                                <p>г. Москва, ул. Траурная, д. 13</p>
                             </div>
                         </div>
-                        
-                        <div class="registration-image" id="register">
-                            <img src="assets/reg.svg" alt="Регистрация на вебинар">
+                        <div class="contact-item">
+                            <svg class="contact-icon"><use href="#icon-phone"></use></svg>
+                            <div>
+                                <strong>Телефон:</strong>
+                                <p>+7 (495) 123-45-67</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon"><use href="#icon-email"></use></svg>
+                            <div>
+                                <strong>Email:</strong>
+                                <p>info@vechniy-pokoy.ru</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon"><use href="#icon-time"></use></svg>
+                            <div>
+                                <strong>Режим работы:</strong>
+                                <p>Круглосуточно</p>
+                            </div>
                         </div>
                     </div>
+                </div>
+
+                <form class="contact-form" id="contact-form" novalidate>
+                    <h3>Отправить запрос</h3>
+                    <div class="form-group">
+                        <label for="name" class="form-label">Ваше имя *</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                        <span class="error-message" id="name-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Телефон *</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" required>
+                        <span class="error-message" id="phone-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service" class="form-label">Интересующая услуга</label>
+                        <select id="service" name="service" class="form-select">
+                            <option value="">Выберите услугу</option>
+                            <option value="traditional">Традиционные похороны</option>
+                            <option value="cremation">Кремация</option>
+                            <option value="transport">Транспортные услуги</option>
+                            <option value="care">Уход за захоронением</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <svg class="icon"><use href="#icon-email"></use></svg>
+                        Отправить запрос
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <!-- 1. О компании -->
+            <div class="footer-section">
+                <h3><svg class="footer-title-icon"><use href="#icon-info"></use></svg> Вечный Покой</h3>
+                <p>Мы заботимся о вашем последнем путешествии с 1995 года. Профессионализм, такт и внимание к деталям.</p>
+            </div>
+
+            <!-- 2. Контакты -->
+            <div class="footer-section">
+                <h3><svg class="footer-title-icon"><use href="#icon-phone"></use></svg> Контакты</h3>
+                <div class="contact-item">
+                    <svg class="contact-icon"><use href="#icon-location"></use></svg>
+                    <div><p>г. Москва, ул. Траурная, д. 13</p></div>
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon"><use href="#icon-phone"></use></svg>
+                    <div><p>+7 (495) 123-45-67</p></div>
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon"><use href="#icon-email"></use></svg>
+                    <div><p>info@vechniy-pokoy.ru</p></div>
+                </div>
+            </div>
+
+            <!-- 3. Навигация -->
+            <div class="footer-section">
+                <h3><svg class="footer-title-icon"><use href="#icon-list"></use></svg> Навигация</h3>
+                <ul class="footer-links">
+                    <li><a href="#services"><svg class="footer-nav-icon"><use href="#icon-bullet"></use></svg> Наши услуги</a></li>
+                    <li><a href="#process"><svg class="footer-nav-icon"><use href="#icon-bullet"></use></svg> Как мы работаем</a></li>
+                    <li><a href="#gallery"><svg class="footer-nav-icon"><use href="#icon-bullet"></use></svg> Галерея</a></li>
+                    <li><a href="#pricing"><svg class="footer-nav-icon"><use href="#icon-bullet"></use></svg> Цены</a></li>
+                    <li><a href="#testimonials"><svg class="footer-nav-icon"><use href="#icon-bullet"></use></svg> Отзывы</a></li>
+                </ul>
+            </div>
+
+            <!-- 4. Соцсети -->
+            <div class="footer-section">
+                <h3><svg class="footer-title-icon"><use href="#icon-share"></use></svg> Оставайтесь на связи</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram" class="social-link">
+                        <svg class="icon"><use href="#icon-instagram"></use></svg>
+                    </a>
+                    <a href="#" aria-label="ВКонтакте" class="social-link">
+                        <svg class="icon"><use href="#icon-vk"></use></svg>
+                    </a>
+                    <a href="#" aria-label="Telegram" class="social-link">
+                        <svg class="icon"><use href="#icon-telegram"></use></svg>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="tools-section" id="tools">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="section-header text-center mb-5">
-                            <h2 class="tools-title">
-                                Какие инструменты будем использовать
-                            </h2>
-                        </div>
-
-                        <div class="tools-grid">
-                            <div class="tool-item">
-                                <div class="tool-icon">
-                                    <img src="assets/1-sec.svg" alt="Авторские лекции" class="tool-svg">
-                                </div>
-                                <div class="tool-content">
-                                    <h4 class="tool-title">
-                                        Авторские лекции и материалы
-                                    </h4>
-                                    <p class="tool-description">
-                                        только проверенные знания и наработки
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="tool-item">
-                                <div class="tool-icon">
-                                    <img src="assets/2-sec.svg" alt="Видео-уроки" class="tool-svg">
-                                </div>
-                                <div class="tool-content">
-                                    <h4 class="tool-title">
-                                        Видео-уроки высокого качества
-                                    </h4>
-                                    <p class="tool-description">
-                                        записанные специально для этого курса
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="tool-item">
-                                <div class="tool-icon">
-                                    <img src="assets/3-sec.svg" alt="Медитации" class="tool-svg">
-                                </div>
-                                <div class="tool-content">
-                                    <h4 class="tool-title">
-                                        Пакет завораживающих медитаций
-                                    </h4>
-                                    <p class="tool-description">
-                                        с музыкальным сопровождением, написанным композиторами из Германии
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="copyright">
+            <p>&copy; 2025 Похоронное бюро "Вечный Покой". Все права защищены.</p>
         </div>
+    </div>
+</footer>
 
-        <div class="results-section" id="results">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="section-header text-center mb-5">
-                            <h2 class="results-title">
-                                Какого результата вы достигнете
-                            </h2>
-                        </div>
-
-                        <div class="results-grid">
-                            <div class="results-column">
-                                <div class="result-item">
-                                    <div class="result-icon">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <circle cx="10" cy="10" r="10" fill="#28a745"/>
-                                            <path d="M6 10L8.5 12.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="result-text">
-                                        Избавитесь от болей в шее/спине/пояснице и скорректируете осанку
-                                    </div>
-                                </div>
-
-                                <div class="result-item">
-                                    <div class="result-icon">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <circle cx="10" cy="10" r="10" fill="#28a745"/>
-                                            <path d="M6 10L8.5 12.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="result-text">
-                                        В результате регулярных занятий обретете стройное, гибкое тело, плоский живот и упругие ягодицы
-                                    </div>
-                                </div>
-
-                                <div class="result-item">
-                                    <div class="result-icon">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <circle cx="10" cy="10" r="10" fill="#28a745"/>
-                                            <path d="M6 10L8.5 12.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="result-text">
-                                        Замедлите возрастные изменения
-                                    </div>
-                                </div>
-
-                                <div class="result-item">
-                                    <div class="result-icon">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <circle cx="10" cy="10" r="10" fill="#28a745"/>
-                                            <path d="M6 10L8.5 12.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="result-text">
-                                        Измените компенсацию мышц и научите тело распределять нагрузку на нерабочие и атрофированные мышцы
-                                    </div>
-                                </div>
-
-                                <div class="result-item">
-                                    <div class="result-icon">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <circle cx="10" cy="10" r="10" fill="#28a745"/>
-                                            <path d="M6 10L8.5 12.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="result-text">
-                                        За счет проработки качества движения снизите риск повторных травм
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="results-column">
-                                <div class="result-item">
-                                    <div class="result-icon">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <circle cx="10" cy="10" r="10" fill="#28a745"/>
-                                            <path d="M6 10L8.5 12.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="result-text">
-                                        Наладите отношение с собственным телом и найдете идеальную физическую активность
-                                    </div>
-                                </div>
-
-                                <div class="result-item">
-                                    <div class="result-icon">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <circle cx="10" cy="10" r="10" fill="#28a745"/>
-                                            <path d="M6 10L8.5 12.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="result-text">
-                                        Научитесь справляться со своими эмоции и восстанавливать внутреннее равновесие
-                                    </div>
-                                </div>
-
-                                <div class="result-item">
-                                    <div class="result-icon">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <circle cx="10" cy="10" r="10" fill="#28a745"/>
-                                            <path d="M6 10L8.5 12.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="result-text">
-                                        Наладите отношение с эмоциональной сферой, чтобы обрести баланс и эффективно использовать свой потенциал
-                                    </div>
-                                </div>
-
-                                <div class="result-item">
-                                    <div class="result-icon">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                            <circle cx="10" cy="10" r="10" fill="#28a745"/>
-                                            <path d="M6 10L8.5 12.5L14 7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                    </div>
-                                    <div class="result-text">
-                                        Освоите техники дыхания и научитесь медитировать
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+<script src="index.js"></script>
+</body>
 </html>
