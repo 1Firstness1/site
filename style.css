@@ -2,12 +2,12 @@
 :root {
     /* ЦВЕТОВАЯ ПАЛИТРА */
 
-    /* Акценты (Сделаны светлее для контраста на темном фоне) */
+    /* Акценты (улучшен контраст) */
     --primary-brown: #D7CCC8; /* Светлый бежево-коричневый */
     --dark-brown: #A1887F;    /* Для границ и элементов потемнее */
 
-    --accent-green: #66BB6A;  /* Яркий зеленый (проходит тест контраста) */
-    --light-green: #81C784;   /* Еще светлее для ховеров */
+    --accent-green: #2E7D32;  /* Темный зеленый (AA c белым текстом) */
+    --light-green: #1B5E20;   /* Ховер еще темнее, сохраняет AA */
     --title-green: #A5D6A7;   /* Бледно-зеленый для заголовка Hero */
 
     /* Фоновые цвета (Смягченные) */
@@ -254,7 +254,7 @@ header {
 
 .btn-primary {
     background: var(--accent-green);
-    color: #fff; /* Белый текст на зеленом - хороший контраст */
+    color: #FFFFFF; /* Белый текст на темном зеленом - AA */
 }
 
 .btn-secondary {
@@ -265,7 +265,19 @@ header {
 
 .btn:hover {
     transform: translateY(-2px);
-    opacity: 0.9;
+    opacity: 0.95;
+}
+
+.btn-submit {
+    width: 100%;
+    justify-content: center;
+    cursor: pointer;
+    background: var(--accent-green);
+    color: #FFFFFF;
+}
+
+.btn-submit:hover {
+    background: var(--light-green);
 }
 
 /* Общие стили секций */
@@ -739,7 +751,7 @@ footer {
     border-top: 1px solid #333;
     padding-top: 2rem;
     text-align: center;
-    color: #757575;
+    color: #BDBDBD; /* Более светлый текст на темном фоне для AA */
     font-size: 0.9rem;
 }
 
