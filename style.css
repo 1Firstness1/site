@@ -4,21 +4,25 @@
 
     /* Акценты (улучшен контраст) */
     --primary-brown: #D7CCC8; /* Светлый бежево-коричневый */
-    --dark-brown: #A1887F;    /* Для границ и элементов потемнее */
+    --dark-brown: #A1887F;
 
-    --accent-green: #2E7D32;  /* Темный зеленый (AA c белым текстом) */
-    --light-green: #1B5E20;   /* Ховер еще темнее, сохраняет AA */
-    --title-green: #A5D6A7;   /* Бледно-зеленый для заголовка Hero */
+    --accent-green: #2E7D32;  /* Зеленый для кнопок/иконок (как было) */
+    --light-green: #1B5E20;   /* Ховер */
 
-    /* Фоновые цвета (Смягченные) */
-    --bg-black: #212121;      /* Основной фон (Темно-серый, не черный) */
-    --light-gray: #333333;    /* Фон карточек (Светлее основного) */
-    --header-bg: #2C2C2C;     /* Фон хедера */
-    --footer-bg: #1E1E1E;     /* Фон футера */
+    /* Новый: более контрастный зеленый только для слова "Покой" в логотипе */
+    --logo-green: #00C853;    /* Material Green A700, контраст > 6:1 на #2C2C2C */
+
+    --title-green: #A5D6A7;
+
+    /* Фон */
+    --bg-black: #212121;
+    --light-gray: #333333;
+    --header-bg: #2C2C2C;
+    --footer-bg: #1E1E1E;
 
     /* Текст */
-    --text-color: #FAFAFA;    /* Почти белый основной текст */
-    --medium-gray: #CCCCCC;   /* Вторичный текст (Светло-серый) */
+    --text-color: #FAFAFA;
+    --medium-gray: #CCCCCC;
 
     /* Шрифты и прочее */
     --font-main: 'Georgia', 'Times New Roman', serif;
@@ -29,16 +33,9 @@
     --transition-normal: 0.3s ease;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-html {
-    scroll-behavior: smooth;
-    background-color: var(--bg-black);
-}
+html { scroll-behavior: smooth; background-color: var(--bg-black); }
 
 body {
     font-family: var(--font-secondary);
@@ -52,45 +49,25 @@ body {
 /* Утилиты */
 .visually-hidden {
     position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0, 0, 0, 0); border: 0;
 }
 
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-}
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 
-.icon {
-    width: 24px;
-    height: 24px;
-    fill: currentColor;
-    flex-shrink: 0;
-}
+.icon { width: 24px; height: 24px; fill: currentColor; flex-shrink: 0; }
 
 /* Шапка */
 header {
     background: var(--header-bg);
     border-bottom: 1px solid #444;
     padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    position: sticky; top: 0; z-index: 1000;
     box-shadow: var(--shadow-light);
 }
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+.header-content { display: flex; justify-content: space-between; align-items: center; }
 
 .logo {
     font-family: var(--font-main);
@@ -98,26 +75,19 @@ header {
     font-weight: bold;
     color: var(--text-color);
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
+    display: flex; align-items: center; gap: 0.8rem;
 }
 
+/* Только слово "Покой" делаем более контрастным */
 .logo span {
-    color: var(--accent-green);
+    color: var(--logo-green);
+    font-weight: 700;
 }
 
-.logo-icon {
-    width: 40px;
-    height: 40px;
-}
+.logo-icon { width: 40px; height: 40px; }
 
 /* Навигация */
-.nav-list {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
-}
+.nav-list { display: flex; list-style: none; gap: 1.5rem; }
 
 .nav-link {
     color: var(--text-color);
@@ -126,159 +96,71 @@ header {
     transition: color var(--transition-normal);
 }
 
-.nav-link:hover {
-    color: var(--accent-green);
-}
+.nav-link:hover { color: var(--accent-green); }
 
 .nav-toggle { display: none; }
 
 /* Социальные кнопки */
-.header-social {
-    display: flex;
-    gap: 0.8rem;
-}
+.header-social { display: flex; gap: 0.8rem; }
 
 .social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 50%;
     color: var(--text-color);
-    background: #424242; /* Чуть светлее фона */
+    background: #424242;
     transition: all 0.2s ease;
 }
 
 .social-link:active {
     background: var(--accent-green);
-    color: #fff;
-    transform: scale(0.95);
+    color: #fff; transform: scale(0.95);
 }
 
 /* Hero секция */
 .hero {
-    padding: 6rem 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 6rem 0; text-align: center; position: relative; overflow: hidden;
+    min-height: 80vh; display: flex; align-items: center; justify-content: center;
     background: linear-gradient(180deg, var(--bg-black) 0%, #2a2a2a 100%);
 }
 
-.hero-side-image {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 25%;
-    max-width: 300px;
-    z-index: 1;
-}
-
-.hero-side-left { left: 0; }
-.hero-side-right { right: 0; }
+.hero-side-image { position: absolute; top: 50%; transform: translateY(-50%); width: 25%; max-width: 300px; z-index: 1; }
+.hero-side-left { left: 0; } .hero-side-right { right: 0; }
 
 .hero-side-image img {
-    width: 100%;
-    opacity: 0.7; /* Чуть ярче картинки */
+    width: 100%; opacity: 0.7;
     mask-image: linear-gradient(to bottom, transparent 0%, black 50%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 50%, transparent 100%);
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    margin: 0 auto;
-}
+.hero-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
 
-.hero-title {
-    font-family: var(--font-main);
-    font-size: clamp(2rem, 5vw, 4rem);
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
+.hero-title { font-family: var(--font-main); font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 1.5rem; color: var(--text-color); text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
 
-.hero-title span {
-    color: var(--title-green);
-}
+.hero-title span { color: var(--title-green); }
 
-.hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 2.5rem;
-    color: var(--medium-gray);
-}
+.hero-subtitle { font-size: 1.2rem; margin-bottom: 2.5rem; color: var(--medium-gray); }
 
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-}
+.hero-buttons { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; }
 
-.hero-features {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
+.hero-features { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
 
-.feature {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(255,255,255,0.08);
-    padding: 0.6rem 1.2rem;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.1);
-}
+.feature { display: flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.08); padding: 0.6rem 1.2rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
 
 /* Кнопки */
 .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    font-weight: bold;
-    transition: transform var(--transition-normal);
-    cursor: pointer;
-    border: none;
-    font-size: 1rem;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 1rem 2rem; border-radius: var(--border-radius);
+    text-decoration: none; font-weight: bold; transition: transform var(--transition-normal);
+    cursor: pointer; border: none; font-size: 1rem;
 }
 
-.btn-primary {
-    background: var(--accent-green);
-    color: #FFFFFF; /* Белый текст на темном зеленом - AA */
-}
+.btn-primary { background: var(--accent-green); color: #FFFFFF; }
+.btn-secondary { border: 2px solid var(--medium-gray); color: var(--text-color); background: transparent; }
 
-.btn-secondary {
-    border: 2px solid var(--medium-gray);
-    color: var(--text-color);
-    background: transparent;
-}
+.btn:hover { transform: translateY(-2px); opacity: 0.95; }
 
-.btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.95;
-}
-
-.btn-submit {
-    width: 100%;
-    justify-content: center;
-    cursor: pointer;
-    background: var(--accent-green);
-    color: #FFFFFF;
-}
-
-.btn-submit:hover {
-    background: var(--light-green);
-}
+.btn-submit { width: 100%; justify-content: center; cursor: pointer; background: var(--accent-green); color: #FFFFFF; }
+.btn-submit:hover { background: var(--light-green); }
 
 /* Общие стили секций */
 section {
